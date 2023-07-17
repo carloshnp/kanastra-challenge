@@ -1,0 +1,6 @@
+dist
+.env*
+.vscode
+.devcontainer
+.devcontainer/devcontainer.json
+node_modules/
