@@ -8,7 +8,7 @@ name,governmentId,email,debtAmount,debtDueDate,debtId
 John Doe,11111111111,johndoe@kanastra.com.br,1000000.00,2022-10-12,8291
 ```
 
-	- Para enviar o arquivo no Postman, deve se enviar uma requisição POST para o servidor, com um body em form-data, colocando a *key* como csv, tipo *file* e enviar o arquivo através do campo *value*.
+- Para enviar o arquivo no Postman, deve se enviar uma requisição POST para o servidor, com um body em form-data, colocando a *key* como csv, tipo *file* e enviar o arquivo através do campo *value*.
 
 - `POST /payments` : utiliza um webhook JSON (uma requisição com JSON no body) para inserir um pagamento no banco de dados, dando baixa do boleto no sistema. O JSON deve ter o seguinte formato: 
 ```JSON
@@ -20,7 +20,7 @@ John Doe,11111111111,johndoe@kanastra.com.br,1000000.00,2022-10-12,8291
 }
 ```
 
-	- Para enviar o pagamento, envie um body com o JSON respectivo ao pagamento para o servidor
+- Para enviar o pagamento, envie um body com o JSON respectivo ao pagamento para o servidor
 
 - `GET /debts` : retorna o banco de dados com as cobranças e os pagamentos (se houverem) em formato JSON.
 
