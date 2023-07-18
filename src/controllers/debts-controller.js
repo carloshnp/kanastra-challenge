@@ -14,11 +14,12 @@ async function saveCsvToDatabase(req, res) {
     if (createdDebts.length === 0) {
       return res.status(409).send({ error: 'Debt already added to the database' })
     } else {
-
+      let emails = [];
       for (const debt of createdDebts) {
         const emailContent = `Dear ${debt.name},\n\nYou have a debt of ${debt.debtAmount} due on ${debt.debtDueDate}. Please make the payment as soon as possible.\n\nRegards,\nKanastra. `;
-        console.log(emailContent);
+        emails.push(emailContent);
       }
+      console.log(emails);
       return res.status(201).send({ message: 'Emails sent successfully!' })
     }
   } catch (error) {
