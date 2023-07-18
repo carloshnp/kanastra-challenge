@@ -1,3 +1,5 @@
+# Kanastra Challenge
+
 A API de débitos da Kanastra possui as seguintes rotas:
 
 - `POST /debts` : insere um CSV enviado pelo usuário para o banco de dados com as informações dos clientes que possuem dívidas a serem pagas, disparando um email para cada cliente com a cobrança. O CSV deve ter o seguinte formato, sem espaços nos campos:
