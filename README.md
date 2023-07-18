@@ -27,6 +27,7 @@ John Doe,11111111111,johndoe@kanastra.com.br,1000000.00,2022-10-12,8291
 Para executar o projeto, precisamos:
 
 - Executar o comando `npm install` para instalar as dependências do projeto
+- Criar o arquivo .env como o exemplo
 - Instalar o PostgreSQL (versão 14)
 - Executar os comandos do Prisma: `npx prisma migrate dev --name init` para adicionar o banco de dados e a tabela ao Postgres
 
