@@ -1,4 +1,5 @@
 import { createDebts } from "../services/debts-service.js";
+import { getDebtsAndPayments } from "../services/debts-service.js";
 
 async function saveCsvToDatabase(req, res) {
     try {
@@ -11,4 +12,13 @@ async function saveCsvToDatabase(req, res) {
     }
 }
 
-export { saveCsvToDatabase };
+async function getDebtsWithPayments(req, res) {
+  try {
+    const debtsWithPayments = await getDebtsAndPayments();
+    return res.json(debtsWithPayments);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export { saveCsvToDatabase, getDebtsWithPayments };

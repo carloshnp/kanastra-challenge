@@ -33,4 +33,19 @@ async function createDebtsInDatabase(debts) {
     }
 }
 
-export { createDebtsInDatabase };
+async function getDebtsWithPaymentsFromDatabase() {
+    try {
+      const debtsWithPayments = await prisma.debts.findMany({
+        include: {
+          payments: true,
+        },
+      });
+  
+      return debtsWithPayments;
+    } catch (error) {
+      console.error("Error fetching debts with payments:", error);
+      throw error;
+    }
+  }
+
+export { createDebtsInDatabase, getDebtsWithPaymentsFromDatabase };

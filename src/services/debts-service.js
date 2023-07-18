@@ -1,4 +1,5 @@
 import { createDebtsInDatabase } from "../repositories/debts-repository.js";
+import { getDebtsWithPaymentsFromDatabase } from "../repositories/debts-repository.js";
 
 async function createDebts(debts) {
     try {
@@ -19,4 +20,14 @@ async function createDebts(debts) {
     }
 }
 
-export { createDebts };
+async function getDebtsAndPayments() {
+  try {
+    const debtsWithPayments = await getDebtsWithPaymentsFromDatabase();
+    return debtsWithPayments;
+  } catch (error) {
+    console.log("Error fetching debts with payments:", error);
+    throw error;
+  }
+}
+
+export { createDebts, getDebtsAndPayments };
