@@ -9,3 +9,16 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model debts {
+  id           Int      @id @default(autoincrement())
+  name         String
+  governmentId String
+  email        String
+  debtAmount   Float
+  debtDueDate  DateTime @map("debt_due_date")
+  debtId       String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
